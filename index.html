@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А-мега — Идеальное пространство</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        appleDark: '#1d1d1f',
+                        appleGray: '#f5f5f7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Стили для плавного открытия мобильного меню */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 300px; /* Достаточная высота для пунктов меню */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white">
+
+    <!-- Навигация -->
+    <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <div class="flex-shrink-0 flex items-center cursor-pointer font-bold text-xl tracking-tight" onclick="window.scrollTo(0,0)">
+                    А-мега
+                </div>
+                
+                <!-- Десктопное меню -->
+                <div class="hidden md:flex space-x-8 text-xs font-medium tracking-wide text-gray-600">
+                    <a href="#ceilings" class="hover:text-black transition-colors">Потолки</a>
+                    <a href="#furniture" class="hover:text-black transition-colors">Мебель</a>
+                    <a href="#lighting" class="hover:text-black transition-colors">Освещение</a>
+                    <a href="#windows" class="hover:text-black transition-colors">Окна ПВХ</a>
+                    <a href="#contacts" class="hover:text-black transition-colors">Контакты</a>
+                </div>
+
+                <!-- Кнопка мобильного меню (Гамбургер) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-black focus:outline-none p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Выпадающее мобильное меню -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-100 absolute w-full left-0 top-14 shadow-lg">
+            <div class="px-4 py-4 space-y-4 text-center flex flex-col font-medium text-gray-700">
+                <a href="#ceilings" class="mobile-link hover:text-black transition-colors">Потолки</a>
+                <a href="#furniture" class="mobile-link hover:text-black transition-colors">Мебель</a>
+                <a href="#lighting" class="mobile-link hover:text-black transition-colors">Освещение</a>
+                <a href="#windows" class="mobile-link hover:text-black transition-colors">Окна ПВХ</a>
+                <a href="#contacts" class="mobile-link hover:text-black transition-colors">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <section class="pt-40 pb-32 px-4 text-center bg-appleGray flex flex-col items-center justify-center min-h-[70vh]">
+        <!-- Место под ваш логотип -->
+        <img src="logo.png" alt="А-мега Логотип" class="h-24 md:h-32 mb-8 object-contain fade-in" onerror="this.style.display='none'">
+        
+        <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter mb-4 fade-in" style="transition-delay: 0.1s;">Пространство.<br>Продуманное до мелочей.</h1>
+        <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl mx-auto mb-10 fade-in" style="transition-delay: 0.2s;">
+            Комплексные решения для вашего интерьера от компании А-мега.
+        </p>
+        <a href="#contacts" class="bg-black text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-transform fade-in" style="transition-delay: 0.3s;">
+            Связаться с нами
+        </a>
+    </section>
+
+    <!-- 1. Потолки -->
+    <section id="ceilings" class="py-32 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-4">Натяжные потолки.</h2>
+            <p class="text-lg text-gray-500 font-light">Безупречно ровные поверхности, скрывающие любые несовершенства.</p>
+        </div>
+        <!-- Изображение в естественных пропорциях, обтянутое рамкой -->
+        <div class="flex justify-center fade-in">
+            <img src="20220721_164311.jpg" alt="Натяжной потолок" class="max-w-full max-h-[70vh] rounded-3xl shadow-2xl">
+        </div>
+    </section>
+
+    <!-- 2. Мебель -->
+    <section id="furniture" class="py-32 px-4 max-w-7xl mx-auto border-t border-gray-100">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-6">Мебель на заказ.</h2>
+            <p class="text-lg text-gray-500 font-light max-w-3xl mx-auto mb-6">
+                Создаем идеальные системы хранения. Стильные распашные шкафы и вместительные шкафы-купе, спроектированные точно под ваши размеры и потребности.
+            </p>
+        </div>
+        <!-- Контейнеры с overflow-hidden, изображения заполняют их целиком -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+            <div class="h-[500px] rounded-3xl overflow-hidden shadow-lg">
+                <img src="images (1).jpg" alt="Распашной шкаф" class="w-full h-full object-cover">
+            </div>
+            <div class="h-[500px] rounded-3xl overflow-hidden shadow-lg">
+                <img src="6no0lnbou5rq9epjnlm5fway6fs6x81r.jpg" alt="Шкаф-купе" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Освещение -->
+    <section id="lighting" class="py-32 px-4 bg-appleDark text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-6xl font-semibold tracking-tighter mb-6">Свет, который подчиняется вам.</h2>
+                <p class="text-xl text-gray-400 font-light max-w-3xl mx-auto">
+                    Магнитно-трековое освещение — это новый стандарт премиального интерьера.
+                </p>
+            </div>
+
+            <!-- Первое фото освещения (Деталь/Светильник) -->
+            <div class="mb-16 fade-in flex justify-center">
+                <img src="slim-magnetic-trekovii-svetilnik-14w-4200k-dual-latun-85046-01e692303ca8b8e95c4c42c907cfc438fe.jpg" alt="Магнитный трековый светильник" class="max-w-full rounded-3xl shadow-2xl h-auto object-contain">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mb-16 fade-in">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Абсолютная свобода.</h3>
+                    <p class="text-gray-400">Светильники крепятся в шинопровод с помощью мощных магнитов. Вы можете в любую секунду переместить их без вызова электрика.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Минимализм в деталях.</h3>
+                    <p class="text-gray-400">Трек монтируется заподлицо с натяжным потолком, образуя строгие, элегантные черные линии.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Умное зонирование.</h3>
+                    <p class="text-gray-400">Комбинируйте линейные светильники для общего света и споты для акцентирования внимания на деталях.</p>
+                </div>
+            </div>
+
+            <!-- Второе фото освещения (Интерьер - 5-е фото) в естественных пропорциях -->
+            <div class="flex justify-center fade-in">
+                <img src="2.jpg" alt="Интерьер с трековым освещением" class="max-w-full max-h-[70vh] rounded-3xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Окна ПВХ -->
+    <section id="windows" class="py-32 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-4">Окна ПВХ. Тепло и тишина.</h2>
+            <p class="text-lg text-gray-500 font-light">Энергосберегающие технологии, которые защищают ваш дом.</p>
+        </div>
+        <div class="flex justify-center fade-in">
+            <img src="46ed829e2d116adc0e974a8585ef4741.jpg" alt="Окна ПВХ" class="max-w-full h-auto rounded-3xl shadow-lg object-contain">
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="py-24 px-4 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-md mx-auto text-center fade-in">
+            <h2 class="text-4xl font-semibold tracking-tighter mb-8">Свяжитесь с нами</h2>
+            
+            <form onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.'); this.reset();" class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col gap-5 text-left">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Ваше имя</label>
+                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all" placeholder="Иван Иванов">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Номер телефона</label>
+                    <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all" placeholder="+7 (999) 000-00-00">
+                </div>
+                
+                <button type="submit" class="mt-4 bg-black text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors w-full">
+                    Оставить заявку
+                </button>
+            </form>
+            
+            <div class="mt-10 text-gray-500 flex flex-col gap-2">
+                <p>+7 (XXX) XXX-XX-XX</p>
+                <p>info@a-mega.ru</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="bg-white py-8 border-t border-gray-200 text-center text-sm text-gray-400">
+        <p>&copy; 2026 А-мега. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипты (Анимация при скролле и Мобильное меню) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Анимация появления
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Мобильное меню
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            // Открытие/закрытие по клику на бутерброд
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // Автоматическое закрытие при клике на ссылку
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
