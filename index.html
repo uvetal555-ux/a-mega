@@ -38,7 +38,7 @@
             overflow: hidden;
         }
         #mobile-menu.open {
-            max-height: 300px; /* Достаточная высота для пунктов меню */
+            max-height: 300px;
             opacity: 1;
         }
     </style>
@@ -88,7 +88,7 @@
     <!-- Главный экран -->
     <section class="pt-40 pb-32 px-4 text-center bg-appleGray flex flex-col items-center justify-center min-h-[70vh]">
         <!-- Место под ваш логотип -->
-        <img src="./images/logo.png" alt="А-мега Логотип" class="mt-12 h-24 md:h-32 mb-4 object-contain fade-in" onerror="this.style.display='none'">
+        <img src="logo.png" alt="А-мега Логотип" class="mt-12 h-24 md:h-32 mb-4 object-contain fade-in" onerror="this.style.display='none'">
         
         <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter mb-4 fade-in" style="transition-delay: 0.1s;">Фабрика вашего интерьера.</h1>
         <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl mx-auto mb-10 fade-in" style="transition-delay: 0.2s;">
@@ -105,9 +105,8 @@
             <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-4">Натяжные потолки.</h2>
             <p class="text-lg text-gray-500 font-light">Безупречно ровные поверхности, скрывающие любые несовершенства.</p>
         </div>
-        <!-- Изображение в естественных пропорциях, обтянутое рамкой -->
         <div class="flex justify-center fade-in">
-            <img src="./images/20220721_164311.jpg" alt="Натяжной потолок" class="max-w-full max-h-[70vh] rounded-3xl shadow-2xl">
+            <img src="20220721_164311.jpg" alt="Натяжной потолок" class="max-w-full max-h-[70vh] rounded-3xl shadow-2xl">
         </div>
     </section>
 
@@ -119,13 +118,12 @@
                 Создаем идеальные системы хранения. Стильные распашные шкафы и вместительные шкафы-купе, спроектированные точно под ваши размеры и потребности.
             </p>
         </div>
-        <!-- Контейнеры с overflow-hidden, изображения заполняют их целиком -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
             <div class="h-[500px] rounded-3xl overflow-hidden shadow-lg">
-                <img src="./images/images (1).jpg" alt="Распашной шкаф" class="w-full h-full object-cover">
+                <img src="images (1).jpg" alt="Распашной шкаф" class="w-full h-full object-cover">
             </div>
             <div class="h-[500px] rounded-3xl overflow-hidden shadow-lg">
-                <img src="./images/6no0lnbou5rq9epjnlm5fway6fs6x81r.jpg" alt="Шкаф-купе" class="w-full h-full object-cover">
+                <img src="6no0lnbou5rq9epjnlm5fway6fs6x81r.jpg" alt="Шкаф-купе" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
@@ -140,9 +138,8 @@
                 </p>
             </div>
 
-            <!-- Первое фото освещения (Деталь/Светильник) -->
             <div class="mb-16 fade-in flex justify-center">
-                <img src="./images/slim-magnetic-trekovii-svetilnik-14w-4200k-dual-latun-85046-01e692303ca8b8e95c4c42c907cfc438fe.jpg" alt="Магнитный трековый светильник" class="max-w-full rounded-3xl shadow-2xl h-auto object-contain">
+                <img src="slim-magnetic-trekovii-svetilnik-14w-4200k-dual-latun-85046-01e692303ca8b8e95c4c42c907cfc438fe.jpg" alt="Магнитный трековый светильник" class="max-w-full rounded-3xl shadow-2xl h-auto object-contain">
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mb-16 fade-in">
@@ -160,9 +157,8 @@
                 </div>
             </div>
 
-            <!-- Второе фото освещения (Интерьер - 5-е фото) в естественных пропорциях -->
             <div class="flex justify-center fade-in">
-                <img src="./images/2.jpg" alt="Интерьер с трековым освещением" class="max-w-full max-h-[70vh] rounded-3xl shadow-2xl">
+                <img src="2.jpg" alt="Интерьер с трековым освещением" class="max-w-full max-h-[70vh] rounded-3xl shadow-2xl">
             </div>
         </div>
     </section>
@@ -174,11 +170,10 @@
             <p class="text-lg text-gray-500 font-light">Энергосберегающие технологии, которые защищают ваш дом.</p>
         </div>
         <div class="flex justify-center fade-in">
-            <img src="./images/46ed829e2d116adc0e974a8585ef4741.jpg" alt="Окна ПВХ" class="max-w-full h-auto rounded-3xl shadow-lg object-contain">
+            <img src="46ed829e2d116adc0e974a8585ef4741.jpg" alt="Окна ПВХ" class="max-w-full h-auto rounded-3xl shadow-lg object-contain">
         </div>
     </section>
 
-    <!-- Контакты -->
     <!-- Контакты -->
     <section id="contacts" class="py-24 px-4 bg-gray-50 border-t border-gray-200">
         <div class="max-w-md mx-auto text-center fade-in">
@@ -208,7 +203,7 @@
         </div>
     </section>
 
-       <!-- Скрипты -->
+    <!-- Скрипты -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Анимация скролла
@@ -229,17 +224,21 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
 
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('open');
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('open');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
                 });
-            });
+            }
 
-            // Настройка отправки в Telegram
+            if (mobileLinks) {
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                    });
+                });
+            }
+
+            // Настройка отправки в Telegram для одного юзера
             const TG_TOKEN = "8647983123:AAHavMDwnGZbP9m80y_h244sSNtqzQIGowY";
             const TG_CHAT_ID = "1356449759";
 
@@ -247,76 +246,47 @@
             const submitBtn = document.getElementById("submit-btn");
             const statusMsg = document.getElementById("form-status");
 
-            form.addEventListener("submit", async function(e) {
-                e.preventDefault();
+            if (form) {
+                form.addEventListener("submit", async function(e) {
+                    e.preventDefault();
 
-                const name = document.getElementById("name").value.trim();
-                const phone = document.getElementById("phone").value.trim();
+                    const name = document.getElementById("name").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
 
-                submitBtn.disabled = true;
-                submitBtn.textContent = "Отправка...";
-                statusMsg.classList.add("hidden");
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = "Отправка...";
+                    statusMsg.classList.add("hidden");
 
-                const text = `🔔 *Новая заявка с сайта А-мега!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}`;
+                    const text = `🔔 *Новая заявка с сайта А-мега!*\n\n👤 *Имя:* ${name}\n📞 *Телефон:* ${phone}`;
 
-                try {
-                    const response = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            chat_id: TG_CHAT_ID,
-                            text: text,
-                            parse_mode: "Markdown"
-                        })
-                    });
+                    try {
+                        const response = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                chat_id: TG_CHAT_ID,
+                                text: text,
+                                parse_mode: "Markdown"
+                            })
+                        });
 
-                    if (response.ok) {
-                        statusMsg.textContent = "Спасибо! Заявка принята, скоро свяжемся с вами.";
-                        statusMsg.className = "text-center text-sm font-medium text-emerald-600 block mt-2";
-                        form.reset();
-                    } else {
-                        throw new Error("Ошибка при отправке в Telegram");
+                        if (response.ok) {
+                            statusMsg.textContent = "Спасибо! Заявка принята, скоро свяжемся с вами.";
+                            statusMsg.className = "text-center text-sm font-medium text-emerald-600 block mt-2";
+                            form.reset();
+                        } else {
+                            throw new Error("Ошибка при отправке в Telegram");
+                        }
+                    } catch (err) {
+                        statusMsg.textContent = "Не удалось отправить заявку. Попробуйте позвонить нам.";
+                        statusMsg.className = "text-center text-sm font-medium text-red-500 block mt-2";
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "Оставить заявку";
                     }
-                } catch (err) {
-                    statusMsg.textContent = "Не удалось отправить заявку. Попробуйте позвонить нам.";
-                    statusMsg.className = "text-center text-sm font-medium text-red-500 block mt-2";
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = "Оставить заявку";
-                }
-            });
+                });
+            }
         });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // 1. Анимация появления при скролле
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach((el) => {
-                observer.observe(el);
-            });
-
-            // 2. Мобильное меню (кнопка-бутерброд)
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            // Открытие/закрытие по клику на бутерброд
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('open');
-            });
-
-            // Автоматическое закрытие при клике на ссылку
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('open');
-                });
-            });
     </script>
 
     <!-- Подвал -->
