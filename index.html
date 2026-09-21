@@ -286,17 +286,9 @@
                 }
             });
         });
-    </script>
 
-    <!-- Подвал -->
-    <footer class="bg-white py-8 border-t border-gray-200 text-center text-sm text-gray-400">
-        <p>&copy; 2026 А-мега. Все права защищены.</p>
-    </footer>
-
-    <!-- Скрипты (Анимация при скролле и Мобильное меню) -->
-    <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Анимация появления
+            // 1. Анимация появления при скролле
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -309,7 +301,7 @@
                 observer.observe(el);
             });
 
-            // Мобильное меню
+            // 2. Мобильное меню (кнопка-бутерброд)
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -325,7 +317,12 @@
                     mobileMenu.classList.remove('open');
                 });
             });
-        });
     </script>
+
+    <!-- Подвал -->
+    <footer class="bg-white py-8 border-t border-gray-200 text-center text-sm text-gray-400">
+        <p>&copy; 2026 А-мега. Все права защищены.</p>
+    </footer>
+    
 </body>
 </html>
